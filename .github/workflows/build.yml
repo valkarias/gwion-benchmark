@@ -104,6 +104,7 @@ jobs:
         cd bin
         cmake .. -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Release
         make
+        cp vy vyse
 
     - name: Benchmark
       run: |
