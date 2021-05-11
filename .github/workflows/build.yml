@@ -117,7 +117,7 @@ jobs:
         export PATH=./mdr:$PATH
         export PATH=./Gwion:$PATH
         export PATH=./Dictu:$PATH
-        export PATH=./vyse/bin:$PATH
+        export PATH=./snap/bin:$PATH
         export PATH=.:$PATH
         git checkout results
         git pull origin
