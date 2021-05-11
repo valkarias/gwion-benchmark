@@ -100,6 +100,7 @@ jobs:
         git clone https://github.com/srijan-paul/snap
         cd snap 
         git submodule update --init
+        mkdir bin
         cd bin
         cmake .. -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Release
         make
