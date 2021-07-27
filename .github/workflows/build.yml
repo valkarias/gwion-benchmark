@@ -117,6 +117,12 @@ jobs:
         ./pbuild/pbuild download
         ./pbuild/pbuild build --cc-type=gcc
         mv ~/PCrap/bin/pcrap .
+  
+    - name: Kuroko
+      run: |
+        git clone https://github.com/kuroko-lang/kuroko
+        cd kuroko
+        make kuroko
 
     - name: Benchmark
       run: |
@@ -131,6 +137,7 @@ jobs:
         export PATH=./Gwion:$PATH
         export PATH=./Dictu:$PATH
         export PATH=./snap/bin:$PATH
+        export PATH=./kuroko:$PATH
         export PATH=.:$PATH
         git checkout results
         git pull origin
