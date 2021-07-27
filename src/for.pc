@@ -1,0 +1,12 @@
+let list = [];
+
+for let i = 0; i < 1000000; i++ {
+  list.append(i);
+}
+
+let sum = 0;
+for let i = 0; i < list.length(); i++ {
+  sum = i + sum;
+}
+
+print sum;
