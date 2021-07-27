@@ -105,6 +105,18 @@ jobs:
         cmake .. -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Release
         make
         cp vy vyse
+    
+    - name: PCrap
+      run: |
+        url=https://github.com/valkarias/PCrap/releases/download/latest
+        file=PBuild_linux.zip
+        wget "$url/$file"
+        unzip $file
+        rm $file
+        chmod +x pbuild/pbuild
+        ./pbuild/pbuild download
+        ./pbuild/pbuild build --cc-type=gcc
+        mv ~/PCrap/bin/pcrap .
 
     - name: Benchmark
       run: |

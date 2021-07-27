@@ -1,0 +1,73 @@
+class Toggle {
+    init (state) {
+        this.state = state;
+    }
+
+    value () {
+        return this.state;
+    }
+
+    activate () {
+        this.state = !this.state;
+        return this;
+    }
+}
+
+class thToggle {
+    init (state, maxC) {
+        this.state = state;
+        this.countMax = maxC;
+        this.count = 0;
+    }
+
+    value () {
+        return this.state;
+    }
+
+    activate () {
+        this.count = this.count + 1;
+        if (this.count >= this.countMax) {
+            this.state = !this.state;
+            this.count = 0;
+        }
+
+        return this;
+    }
+}
+
+let val = true;
+let n = 100000;
+let toggle = Toggle(val);
+
+for let i = 0; i < n; i++ {
+    val = toggle.activate().value();
+    val = toggle.activate().value();
+    val = toggle.activate().value();
+    val = toggle.activate().value();
+    val = toggle.activate().value();
+    val = toggle.activate().value();
+    val = toggle.activate().value();
+    val = toggle.activate().value();
+    val = toggle.activate().value();
+    val = toggle.activate().value();
+}
+
+print toggle.value();
+
+val = true;
+let ttoggle = thToggle(val, 3);
+
+for let i = 0; i < n; i++ {
+    val = ttoggle.activate().value();
+    val = ttoggle.activate().value();
+    val = ttoggle.activate().value();
+    val = ttoggle.activate().value();
+    val = ttoggle.activate().value();
+    val = ttoggle.activate().value();
+    val = ttoggle.activate().value();
+    val = ttoggle.activate().value();
+    val = ttoggle.activate().value();
+    val = ttoggle.activate().value();
+}
+
+print ttoggle.value();

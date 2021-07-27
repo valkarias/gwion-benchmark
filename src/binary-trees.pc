@@ -1,0 +1,60 @@
+class Nothing {}
+
+class Tree {
+    init (item, d) {
+        this.item = item;
+        this.depth = d;
+
+        if (d > 0) {
+            let temp = item + item;
+            d--;
+            this.left = Tree(temp - 1, d);
+            this.right = Tree(temp, d);
+        } else {
+            this.left = Nothing;
+            this.right = Nothing;
+        }
+    }
+
+    check () {
+        if this.left == Nothing {
+            return this.item;
+        }
+
+        return this.item + this.left.check() - this.right.check();
+    }
+}
+
+let minD = 4;
+let maxD = 12;
+let stretchD = maxD + 1;
+
+
+print "Stretch tree of depth " + stretchD.string() + " check: " + Tree(0, stretchD).check().string();
+
+let longLived = Tree(0, maxD);
+let iterations = 1;
+
+for let i = 0; i < maxD; i++ {
+    iterations = iterations * 2;
+}
+
+let depth = minD;
+
+while depth < stretchD {
+    let check = 0;
+    let i = 1;
+
+    while i <= iterations {
+        check = check + Tree(i, depth).check() + Tree(-i, depth).check();
+        i++;
+    }
+
+    print (iterations * 2).string() + " trees of depth " + depth.string() + " check: " + check.string();
+
+
+    iterations = iterations / 4;
+    depth = depth + 2;
+}
+
+print "Long lived tree of depth: " + maxD.string() + " check: "+ longLived.check().string();
