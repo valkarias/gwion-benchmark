@@ -123,7 +123,7 @@ jobs:
       run: |
         git clone https://github.com/kuroko-lang/kuroko
         cd kuroko
-        make kuroko
+        make
 
     - name: Benchmark
       run: |
@@ -145,7 +145,7 @@ jobs:
         echo "info ${{ github.event.client_payload.commit_info }}"
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git checkout origin/master benchmark.sh version.sh bench.plot src
+        git checkout ${GITHUB_REF} benchmark.sh version.sh bench.plot src
         bash benchmark.sh
         git rm -rf benchmark.sh version.sh bench.plot src
         echo "${{ github.event.client_payload.commit_info }}" > commit_info
