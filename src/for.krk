@@ -1,0 +1,9 @@
+if True:
+  let l = []
+  for i in range(0, 1000000):
+    l.append(i)
+
+  let s = 0.0
+  for i in l:
+    s += i
+  print(s)
