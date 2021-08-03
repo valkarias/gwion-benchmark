@@ -109,8 +109,8 @@ jobs:
     
     - name: PCrap
       run: |
-        url=https://github.com/valkarias/PCrap/releases/download/latest
-        file=PBuild_linux.zip
+        url=https://github.com/valkarias/PCrap/releases/download/ubuntu-latest/
+        file=PBuild_ubuntu-latest.zip
         wget "$url/$file"
         unzip $file
         rm $file
