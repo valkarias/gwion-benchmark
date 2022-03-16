@@ -52,7 +52,7 @@ for let i = 0; i < n; i++ {
     val = toggle.activate().value();
 }
 
-print toggle.value();
+print(toggle.value());
 
 val = true;
 let ttoggle = thToggle(val, 3);
@@ -70,4 +70,4 @@ for let i = 0; i < n; i++ {
     val = ttoggle.activate().value();
 }
 
-print ttoggle.value();
+print(ttoggle.value());
