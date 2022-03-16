@@ -1,5 +1,3 @@
-class Nothing {}
-
 class Tree {
     init (item, d) {
         this.item = item;
@@ -11,13 +9,13 @@ class Tree {
             this.left = Tree(temp - 1, d);
             this.right = Tree(temp, d);
         } else {
-            this.left = Nothing;
-            this.right = Nothing;
+            this.left = none;
+            this.right = none;
         }
     }
 
     check () {
-        if this.left == Nothing {
+        if this.left == none {
             return this.item;
         }
 
@@ -30,7 +28,7 @@ let maxD = 12;
 let stretchD = maxD + 1;
 
 
-print "Stretch tree of depth " + stretchD.string() + " check: " + Tree(0, stretchD).check().string();
+print("Stretch tree of depth {} check: {}".format(stretchD, Tree(0, stretchD).check()));
 
 let longLived = Tree(0, maxD);
 let iterations = 1;
@@ -50,11 +48,11 @@ while depth < stretchD {
         i++;
     }
 
-    print (iterations * 2).string() + " trees of depth " + depth.string() + " check: " + check.string();
+    print("{} trees of depth {} check: {}".format( (iterations * 2), depth,check ));
 
 
     iterations = iterations / 4;
     depth = depth + 2;
 }
 
-print "Long lived tree of depth: " + maxD.string() + " check: "+ longLived.check().string();
+print("Long lived tree of depth: {} check: {}".format(maxD, longLived.check()));
