@@ -117,6 +117,7 @@ jobs:
         chmod +x pbuild/pbuild
         ./pbuild/pbuild download
         ./pbuild/pbuild build --cc-type=gcc
+        mv ~/PCrap/PCrap-master/bin/pcrap .=======
         mv ~/PCrap/bin/pcrap .
   
     - name: Kuroko
