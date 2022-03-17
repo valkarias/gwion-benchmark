@@ -116,7 +116,7 @@ jobs:
         chmod +x pbuild/pbuild
         ./pbuild/pbuild download
         ./pbuild/pbuild build --cc-type=gcc
-        mv ~/PCrap/bin/pcrap .
+        mv ~/PCrap/PCrap-master/bin/pcrap .
 
     - name: Benchmark
       run: |
