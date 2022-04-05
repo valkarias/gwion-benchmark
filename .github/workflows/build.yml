@@ -1,6 +1,7 @@
 name: CI
 
 on:
+  workflow_dispatch:
   repository_dispatch:
     types: [benchmark-event]
 
@@ -108,15 +109,21 @@ jobs:
     
     - name: Pa
       run: |
-        url=https://github.com/valkarias/Pa/releases/download/latest
-        file=PBuild_linux.zip
+        url=https://github.com/valkarias/Pa/releases/download/ubuntu-latest/
+        file=PBuild_ubuntu-latest.zip
         wget "$url/$file"
         unzip $file
         rm $file
         chmod +x pbuild/pbuild
         ./pbuild/pbuild download
         ./pbuild/pbuild build --cc-type=gcc
-        mv ~/Pa/Pa-master/bin/Pa .
+        mv ~/Pa/Pa-master/bin/pa
+  
+    - name: Kuroko
+      run: |
+        git clone https://github.com/kuroko-lang/kuroko
+        cd kuroko
+        make
 
     - name: Benchmark
       run: |
@@ -131,13 +138,14 @@ jobs:
         export PATH=./Gwion:$PATH
         export PATH=./Dictu:$PATH
         export PATH=./snap/bin:$PATH
+        export PATH=./kuroko:$PATH
         export PATH=.:$PATH
         git checkout results
         git pull origin
         echo "info ${{ github.event.client_payload.commit_info }}"
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git checkout origin/master benchmark.sh version.sh bench.plot src
+        git checkout ${GITHUB_REF} benchmark.sh version.sh bench.plot src
         bash benchmark.sh
         git rm -rf benchmark.sh version.sh bench.plot src
         echo "${{ github.event.client_payload.commit_info }}" > commit_info
