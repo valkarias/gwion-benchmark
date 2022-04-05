@@ -106,9 +106,9 @@ jobs:
         make
         cp vy vyse
     
-    - name: PCrap
+    - name: Pa
       run: |
-        url=https://github.com/valkarias/PCrap/releases/download/latest
+        url=https://github.com/valkarias/Pa/releases/download/latest
         file=PBuild_linux.zip
         wget "$url/$file"
         unzip $file
@@ -116,7 +116,7 @@ jobs:
         chmod +x pbuild/pbuild
         ./pbuild/pbuild download
         ./pbuild/pbuild build --cc-type=gcc
-        mv ~/PCrap/PCrap-master/bin/pcrap .
+        mv ~/Pa/Pa-master/bin/Pa .
 
     - name: Benchmark
       run: |
