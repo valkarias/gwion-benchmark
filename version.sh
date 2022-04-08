@@ -10,6 +10,6 @@ ruby: $(ruby -v | cut -d" " -f2)
 horse64: $(horse64 --short-version)
 dictu: $(dictu -v)
 vyse: latest
-pcrap: latest
+pa: latest
 kuroko: $(kuroko --version)
 EOF

@@ -107,9 +107,9 @@ jobs:
         make
         cp vy vyse
     
-    - name: PCrap
+    - name: Pa
       run: |
-        url=https://github.com/valkarias/PCrap/releases/download/ubuntu-latest/
+        url=https://github.com/valkarias/Pa/releases/download/ubuntu-latest/
         file=PBuild_ubuntu-latest.zip
         wget "$url/$file"
         unzip $file
@@ -117,7 +117,7 @@ jobs:
         chmod +x pbuild/pbuild
         ./pbuild/pbuild download
         ./pbuild/pbuild build --cc-type=gcc
-        mv ~/PCrap/PCrap-master/bin/pcrap .
+        mv ~/Pa/Pa-master/bin/pa
   
     - name: Kuroko
       run: |
