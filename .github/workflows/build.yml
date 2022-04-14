@@ -117,13 +117,8 @@ jobs:
         chmod +x pbuild/pbuild
         ./pbuild/pbuild download
         ./pbuild/pbuild build --cc-type=gcc
-<<<<<<< HEAD
-        mv ~/Pa/Pa-master/bin/Pa
-  
-=======
         mv ~/Pa/Pa-master/bin/Pa .  
 
->>>>>>> 73e10049e11c013c43ce4237c641cb1a1e592c7c
     - name: Kuroko
       run: |
         git clone https://github.com/kuroko-lang/kuroko
