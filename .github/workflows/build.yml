@@ -117,7 +117,7 @@ jobs:
         chmod +x pbuild/pbuild
         ./pbuild/pbuild download
         ./pbuild/pbuild build --cc-type=gcc
-        mv ~/Pa/Pa-master/bin/Pa .  
+        mv ~/Pa/Pa-master/bin/Pa pa
 
     - name: Kuroko
       run: |
