@@ -2,7 +2,7 @@ class Toggle {
   var bool state;
   fun bool value() { return state; }
   fun Toggle activate() {
-    !state => state;
+    !state :=> state;
     return this;
   }
 }
@@ -12,47 +12,47 @@ class NthToggle extends Toggle {
   fun Toggle activate() {
     if(++count >= countMax) {
       (this $ Toggle).activate();
-      0 => count;
+      0 :=> count;
     }
     return this;
   }
 }
 
-100000 => var int n;
+100000 :=> var int n;
 
 var Toggle toggle;
-true => var bool val => toggle.state;
+true :=> var bool val :=> toggle.state;
 
 repeat(n) {
-  toggle.activate().value() => val;
-  toggle.activate().value() => val;
-  toggle.activate().value() => val;
-  toggle.activate().value() => val;
-  toggle.activate().value() => val;
-  toggle.activate().value() => val;
-  toggle.activate().value() => val;
-  toggle.activate().value() => val;
-  toggle.activate().value() => val;
-  toggle.activate().value() => val;
+  toggle.activate().value() :=> val;
+  toggle.activate().value() :=> val;
+  toggle.activate().value() :=> val;
+  toggle.activate().value() :=> val;
+  toggle.activate().value() :=> val;
+  toggle.activate().value() :=> val;
+  toggle.activate().value() :=> val;
+  toggle.activate().value() :=> val;
+  toggle.activate().value() :=> val;
+  toggle.activate().value() :=> val;
 }
 
 <<< toggle.value() >>>;
 
 var NthToggle ntoggle;
-true => val => ntoggle.state;
-3 => ntoggle.countMax;
+true :=> val :=> ntoggle.state;
+3 :=> ntoggle.countMax;
 
 repeat(n) {
-  ntoggle.activate().value() => val;
-  ntoggle.activate().value() => val;
-  ntoggle.activate().value() => val;
-  ntoggle.activate().value() => val;
-  ntoggle.activate().value() => val;
-  ntoggle.activate().value() => val;
-  ntoggle.activate().value() => val;
-  ntoggle.activate().value() => val;
-  ntoggle.activate().value() => val;
-  ntoggle.activate().value() => val;
+  ntoggle.activate().value() :=> val;
+  ntoggle.activate().value() :=> val;
+  ntoggle.activate().value() :=> val;
+  ntoggle.activate().value() :=> val;
+  ntoggle.activate().value() :=> val;
+  ntoggle.activate().value() :=> val;
+  ntoggle.activate().value() :=> val;
+  ntoggle.activate().value() :=> val;
+  ntoggle.activate().value() :=> val;
+  ntoggle.activate().value() :=> val;
 }
 
 <<< ntoggle.value() >>>;
