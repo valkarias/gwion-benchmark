@@ -110,7 +110,7 @@ jobs:
     - name: Pa
       run: |
         url=https://github.com/valkarias/PBuild/releases/download/latest/
-        file=ubuntu-latest.zip
+        file=ubuntu-latest-a.zip
         wget "$url/$file"
         unzip $file
         rm $file
