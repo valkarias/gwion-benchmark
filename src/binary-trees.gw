@@ -5,12 +5,12 @@ class final Tree {
   late Tree left, right;
 
   operator new(int it, int depth) {
-    it => item;
+    it :=> item;
     if (depth > 0) {
-      it + it => var int item2;
+      it + it :=> var int item2;
       --depth;
-      new Tree(item2 - 1, depth) => left;
-      new Tree(item2, depth) => right;
+      new Tree(item2 - 1, depth) :=> left;
+      new Tree(item2, depth) :=> right;
     }
   }
 
@@ -21,21 +21,21 @@ class final Tree {
   }
 }
 
-4 => var int minDepth;
-12 => var int maxDepth;
-maxDepth + 1 => var int stretchDepth;
+4 :=> var int minDepth;
+12 :=> var int maxDepth;
+maxDepth + 1 :=> var int stretchDepth;
 
 <<< "stretch tree of depth ", stretchDepth, " check: ",
   (new Tree(0, stretchDepth)).check() >>>;
 
-new Tree(0, maxDepth) => var Tree longLivedTree;
+new Tree(0, maxDepth) :=> var Tree longLivedTree;
 
 #! iterations = 2 ** maxDepth
-1 => var int iterations;
+1 :=> var int iterations;
 for (var int d; d < maxDepth; ++d)
-  2 *=> iterations;
+  2 *:=> iterations;
 
-minDepth => var int depth;
+minDepth :=> var int depth;
 while (depth < stretchDepth) {
   var int check;
   for (var int i; i < iterations; ++i)
